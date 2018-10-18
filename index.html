@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <link rel="stylesheet" href="./css/mui.css" />
+    <link rel="stylesheet" href="./css/mui.min.css" />
     <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/vue.min.js"></script>
     <script type="text/javascript" src="./js/mui.min.js"></script>
@@ -30,22 +30,32 @@
         .mui-slider-item img {
             width:inherit;
         }
+        .banner0 {
+            background-color: #333
+        }
+        .banner1 {
+            background-color: #666
+        }
+        .banner2 {
+            background-color: #999
+        }
     </style>
 </head>
 <body>
-    <section id="main" v-cloak>
+    <div id="main" class="mui-content" v-cloak>
         <div class="mui-slider">
             <div class="mui-slider-group">
                 <div class="mui-slider-item" v-for="(item,index) in bannerList" :key="index" :class="'banner'+index">
                     <img :src="item" alt="" />
                 </div>
             </div>
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div><!--
+                --><div class="mui-indicator" v-for="(item, index) in bannerList.length-1" :key="index"></div>
+            </div>
         </div>
-        <div class="mui-slider-indicator">
-            <div class="mui-indicator mui-active"></div>
-            <div class="mui-indicator"></div>
-        </div>
-    </section>
+    </div>
+    
     <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
