@@ -1,0 +1,157 @@
+*:focus{
+	outline:none;
+	-webkit-tap-highlight-color: rgba(240,240,240,0.1);
+}
+*{
+	outline:none;
+	-webkit-tap-highlight-color: rgba(240,240,240,0.1);
+	-webkit-touch-callout:none;
+    margin:0;padding: 0;
+}
+*:focus { outline: none; } 
+@font-face{
+	font-family: 'lantingxihei';
+	src:url(https://htxq.oss-cn-beijing.aliyuncs.com/resources/font/FZLTXHJT.ttf);
+}
+input[type=text],textarea{
+    -webkit-appearance: none;
+}
+input[type="button"], input[type="submit"], input[type="reset"],button {
+-webkit-appearance: none;
+}
+textarea {  -webkit-appearance: none;}   
+body{font:400 12px/1.5 Arial,"lantingxihei","Microsoft Yahei",Helvetica,sans-serif;width: 100%;color:#323232;}
+h1,h2,h3,h4,h5,h6,i{font-weight:400;font-style:normal}
+a{text-decoration: none; color: #323232;}
+a:link    {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover   {text-decoration: none;}
+a:active  {text-decoration: none;}
+select,input,img,th{vertical-align:middle}
+img{border:none}
+ul,ol,li,dl,dt,dd{list-style-type:none}
+a:focus,input[type="button"]:focus,input[type="submit"]:focus,button,textarea:focus{outline:none}
+table{border-collapse:collapse;border-spacing:0}
+textarea{overflow:auto;resize:none;box-shadow: none;}
+.body_fix {
+    height: 100%;
+    overflow: hidden;
+}
+.goods_shadow,.goods_shadow_login{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    z-index: 13;
+}
+.swipeAnimation {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-size: 0;
+    transition: all 0.2s ease-in-out;
+}
+.dow img{
+    width: 100%;
+}
+.auth{
+    text-align:center;
+    line-height:.3rem;
+    font-size:.16rem;
+    color:#fff;
+    width:.26rem;
+    height:.26rem;
+    border-radius:.18rem;
+    position:absolute;
+    right:-0.01rem;
+    bottom:-0.02rem;
+}
+span[data-auth='1']{
+    background-color:#d3b365;
+}
+span[data-auth='2']{
+  background-color:#000;
+}
+[v-cloak]{
+    display: none;
+}
+.dow{
+    width: 100%;
+}
+@media screen and (min-width: 800px) {
+    .dow {
+        display: none;
+    }
+    #box{
+        width: 7.5rem;
+        margin: 0 auto;
+    }
+}
+#box{
+    padding: .30rem 0.3rem 1.2rem;
+    color:#323232;
+}
+.author{
+    line-height: 0.12rem;
+    padding-bottom: 0.06rem;
+}
+.author_pic{
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align: top;
+}
+.author_pic img{
+    width: 100%;
+    height: 100%;
+    
+}
+.author_name{
+    display: inline-block;
+    vertical-align: top;
+    font:bold 0.28rem/0.7rem "lantingxihei";
+    color:#777777;
+    padding-left: 0.22rem;
+}
+.job_content h1{
+    font:bold 0.3rem/0.74rem "lantingxihei";
+}
+.job_content p{
+    font:0.26rem/1.5 "lantingxihei";
+}
+.job_pics_one{
+    width: 100%;
+    border-radius: 0.06rem;
+    overflow: hidden;
+    margin-top: 0.24rem;
+}
+.job_pics_one img{
+    width: 100%;
+}
+.job_tip{
+    font:0.26rem/0.82rem "lantingxihei";
+    color:#777;
+}
+.job_date{
+    float: left;
+}
+.job_like{
+    display: inline-block;
+    float: right;
+    padding-left: .45rem;
+    background: transparent url(https://htxq.oss-cn-beijing.aliyuncs.com/resources/images/like@2x.png) left center/0.44rem 0.44rem no-repeat;
+}
+.clear:after{
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+/*http://htxq.oss-cn-beijing.aliyuncs.com/resources/images/like@2x.png*/

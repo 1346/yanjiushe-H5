@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>研究社</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" type="text/css" href="./css/jobDetails.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/videoDetails.css">
+
+    <script src="https://cdnm3.17shanyuan.com/static/js/debug/eruda.js"></script>
+    <script>eruda.init();</script>
+
+    <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/vue.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+            document.addEventListener('DOMContentLoaded', function () {
+                var html = document.documentElement;
+                var windowWidth = html.clientWidth;
+                html.style.fontSize = windowWidth / 7.5 + 'px';
+            }, false);
+        })();
+    </script>
+    <style type="text/css">
+        .introduce, .video_content, .introduce_box {
+            /*width: 100%;*/
+            height: auto;
+            overflow: hidden;
+        }
+
+        .introduce_img, .introduce_img img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            /*background: red;*/
+            float: left;
+            display: block;
+            margin-right: 10px;
+        }
+
+        .introduce_name {
+            color: #232323;
+            font-family: "兰亭黑";
+            font-size: 13px;
+            /*font-weight: bold;*/
+            margin-top: 4.5px;
+            /*margin-bottom: 6px;*/
+            display: block;
+            float: left;
+        }
+
+        .introduce_title {
+            width: 60%;
+            font-size: 12px;
+            color: #777;
+            font-family: "兰亭黑";
+            float: left;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .introduce_look {
+            font-size: 12px;
+            color: #777;
+            font-family: "兰亭黑";
+            float: right;
+        }
+
+        .introduce_content {
+            margin-top: 10px;
+            /*padding-bottom: 13.5px;*/
+        }
+
+        #main_work {
+            padding: 16px 0 0;
+        }
+
+        .work_title {
+            height: 21px;
+            overflow: hidden;
+            padding: 0 15px;
+            /*border-bottom: 1px solid #e2e2e2;*/
+            font-size: 14px !important;
+            color: #323232;
+            line-height: 21px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .work_list {
+            height: auto;
+            overflow: hidden;
+            padding: 0 15px;
+            margin-bottom: 13px;
+            border-bottom: 1px solid #e2e2e2;
+        }
+
+        .work_list:last-child {
+            border-bottom: none;
+            margin-bottom: 0 !important;
+        }
+
+        .author {
+            height: auto;
+            overflow: hidden;
+        }
+
+        .work_list .author_pic {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            /*background: red;*/
+            float: left;
+            display: block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .author_name {
+            color: #777;
+            font-size: 14px;
+            font-family: "FZLTXHK-纤细黑";
+            padding: 0;
+        }
+
+        .job_content {
+            height: auto;
+            overflow: hidden;
+            color: #323232;
+            font-size: 13px;
+            font-family: "FZLTXHK-纤细黑";
+            /*line-height: 28px;*/
+        }
+
+        .work_img {
+            width: 80px !important;
+            height: 80px !important;
+            float: left;
+            margin-right: 4%;
+            border-radius: 0.06rem !important;
+        }
+
+        .work_img:last-child {
+            margin-right: 0 !important;
+        }
+    </style>
+</head>
+<body>
+<section id="main" v-cloak>
+    <section class="main_info">
+        <img :src="mainInfo.imgUrl" style="width: 100%" v-show="imgShow">
+        <video controls webkit-playsinline playsinline id='media' :src="playVideoUrl" width="100%" :poster="mainInfo.imgUrl" v-on:ended="boxShow" v-on:play="reportServer" v-show="videoShow" preload="auto"></video>
+        <article class="video_content">
+            <header class="work_title" style="padding: 10px 0 0;">{{mainInfo.title}}</header>
+            <section class="introduce">
+                <section class="introduce_box">
+                    <div class="introduce_img"><img src="" alt="" id="introduce_imgs"/></div>
+                    <div class="introduce_name"></div>
+                    <div class="introduce_title"></div>
+                    <div class="introduce_look"></div>
+                </section>
+                <p class="introduce_content">
+
+                </p>
+            </section>
+            <!--<p id="p">{{mainInfo.content}}</p>-->
+        </article>
+    </section>
+    <section class="main_info" id="main_work">
+        <header class="work_title">作业交流</header>
+        <section id="main_works">
+
+        </section>
+    </section>
+    <section class="more_video">
+        <header class="work_title" style="padding: 10px 0 0;">相关视频</header>
+        <ul>
+            <li v-for="item in moreList">
+                <a :href="'https://' + host + '/h5/htxq5.0/videoDetailsShare.html?id=' + item.id">
+                    <aside class="item_img">
+                        <img :src="item.imgUrl">
+                    </aside>
+                    <aside class="item_info">
+                        <h3>{{item.title}}</h3>
+                        <p class="item_text">{{item.content}}</p>
+                        <p class="item_tip">
+                            <span class="price_cn">{{item.someTimesFree == true ? "限时免费" : "&yen;" + item.price}}</span>
+                            <span>{{item.readCount | wan}}人观看</span>
+                        </p>
+                    </aside>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <div class="dow swipeAnimation">
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.floral.life">
+            <img src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/images/htxq5.0/dow_video.png">
+        </a>
+    </div>
+    <aside id="shade" v-show="boxShowBool">
+        <div class="goods_shadow"></div>
+        <section class="tan_box">
+            <p>试看结束，想观看完整内容，点击右上角，用浏览器打开。</p>
+            <span id="box_button" @touchstart="boxHide">取消</span>
+        </section>
+    </aside>
+</section>
+
+<script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/login_public_750.js"></script>
+<script type="text/javascript" src="./js/jobDetails.js"></script>
+<script type="text/javascript" src="./js/details.js"></script>
+
+</body>
+</html>

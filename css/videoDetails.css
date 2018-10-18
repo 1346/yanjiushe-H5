@@ -1,0 +1,307 @@
+*:focus{
+	outline:none;
+	-webkit-tap-highlight-color: rgba(240,240,240,0.1);
+}
+*{
+	outline:none;
+	-webkit-tap-highlight-color: rgba(240,240,240,0.1);
+	-webkit-touch-callout:none;
+	-webkit-overflow-scrolling: touch;
+    margin:0;padding: 0;
+}
+img{
+	max-width: 100%;
+}
+ul li{
+	list-style: none;
+}
+*:focus { outline: none; } 
+/*@font-face{
+	font-family: '';
+	src:url(https://htxq.oss-cn-beijing.aliyuncs.com/resources/font/FZLTXHJT.ttf);
+}*/
+@font-face{
+	font-family: 'songti';
+	src:url(https://htxq.oss-cn-beijing.aliyuncs.com/resources/fonts/simsun_htxq_5.0.otf);
+}
+input[type=text],textarea,button{
+    -webkit-appearance: none;
+}
+input[type="button"], input[type="submit"], input[type="reset"],button {
+-webkit-appearance: none;
+}
+a{
+	color: #323232;
+}
+textarea {  -webkit-appearance: none;}   
+body{font:400 12px/1.5 Arial,"PingFang SC","Microsoft YaHei",Helvetica,Tahoma,Arial,"Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei";width: 100%;color:#323232;background-color: #f4f4f4}
+.goods_shadow,.goods_shadow_login{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    position: fixed;
+    left: 0;
+    top: 0;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    z-index: 13;
+}
+.body_fix {
+    height: 100%;
+    overflow: hidden;
+}
+.main_info{
+	background-color: #fff;
+	border-bottom: #e2e2e2 1px solid;
+	margin-bottom: 0.2rem;
+}
+.video_content{
+	padding: 0 0.3rem 0.3rem;
+}
+.video_content h2{
+	font: 0.34rem/0.96rem '';
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.video_content h5{
+	font:normal 0.28rem/0.66rem '';
+	color: #dab867;
+}
+.video_content p{
+	font:normal 0.26rem/0.36rem '';
+	color: #777;
+}
+.more_video{
+	padding: 0.12rem 0.3rem 0.3rem;
+	background-color: #fff;
+	/*border-top: #e2e2e2 1px solid;*/
+	line-height: 0.12rem;
+}
+.more_title{
+	font: 0.28rem/0.9rem "";
+}
+.item_img img{
+	width: 3.4rem;
+	height: 2.28rem;
+}
+.item_img{
+	width: 3.4rem;
+}
+.item_img,.item_info{
+	float: left;
+}
+.item_info{
+	width: 3.5rem;
+	height: 2.28rem;
+	padding-left: 0.28rem;
+	box-sizing:border-box;
+}
+.more_video li a{
+	display: inline-block;
+}
+.more_video li{
+	margin-bottom: 0.24rem;
+}
+.item_info h3{
+	font: 0.28rem/0.42rem "";
+	padding-bottom: 0.18rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.item_text{
+	font:0.24rem/0.35rem "";
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	height: 1.02rem;
+}
+.item_tip{
+	margin-top: 0.18rem;
+	font:0.23rem/0.49rem "";
+}
+/*.price_cn{
+	font-family: "songti";
+}*/
+.item_tip span:first-child{
+	color: #dab867;
+}
+.item_tip span:last-child{
+	float: right;
+}
+.dow {
+    width: 100%;
+}
+.swipeAnimation {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-size: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 10;
+}
+.tan_box{
+	width: 5.83rem;
+	height: 3.28rem;
+	position: fixed;
+	left: 50%;
+	top:2.5rem;
+	z-index: 14;
+	transform: translate(-50%,0);
+	background-color:#fff;
+	border-radius: 0.05rem;
+}
+.goods_shadow{
+	background:rgba(0,0,0,0.6) url(https://htxq.oss-cn-beijing.aliyuncs.com/resources/images/htxq5.0/right_arrow.png) 6.43rem 0.3rem/0.56rem 0.68rem no-repeat!important;
+	opacity: 1!important;
+}
+.tan_box p{
+	padding: 0.87rem 0.3rem 0.51rem;
+	color:#323232;
+	font:0.3rem/0.4rem '';
+}
+#box_button{
+	background-color: #323232;
+	display: block;
+	margin:0 auto;
+	width: 5.23rem;
+	color:white;
+	font:0.3rem/0.8rem "";
+	text-align: center;
+	border-radius: 0.05rem;
+}
+
+/*learning card*/
+.card{
+	width:7.1rem;
+	height: 3.7rem;
+	margin: 0 auto;
+	margin-top: 0.3rem;
+	padding:0.74rem 0 0 0.35rem;
+	box-sizing:border-box;
+    background:transparent url('../images/img.png') center center/contain no-repeat;
+	-webkit-box-shadow: 0 .08rem .15rem #888;
+	-moz-box-shadow: 0 .08rem .15rem #888;
+	box-shadow: 0 .08rem .15rem #888;
+    position:relative;
+}
+.card-noId {
+    background: transparent url(https://htxq.oss-cn-beijing.aliyuncs.com/resources/images/htxq5.0/learningCard.png) center center/contain no-repeat !important;
+    padding:0.47rem 0 0 0.56rem !important;
+}
+.card h2{
+	font:0.50rem/1.5rem "songti";
+	color: #dbb867;
+}
+.card h3{
+	font:0.34rem/.47rem "songti";
+	color: #9b9b9b;
+	text-decoration: line-through;
+}
+.card h4{
+	font: 0.4rem/.48rem "songti";
+	color:#dcdcdc;
+}
+.card h4 .shuxian{
+	font:0.36rem/.48rem "songti";
+  	vertical-align: top;
+  	padding: 0 0.1rem;
+}
+.card_introduce{
+	padding: 0 0.3rem 0.35rem 0.2rem;
+}
+.introduce_text {
+	font:0.26rem/0.43rem "";
+	padding-left: 0.46rem;
+	color:#6b6b6b;
+}
+.card_introduce h1{
+	padding-top: 0.18rem;
+	padding-left: 0.12rem;
+	font: 0.3rem/0.85rem "";
+	color:#323232;
+}
+.introduce_text ul li{
+	position: relative;
+}
+/*.introduce_text #list2 li::before{
+	content: "";
+	display: inline-block;
+	width: 0.12rem;
+	height: 0.12rem;
+	background-color: #d8d8d8;
+	border-radius: 50%;
+	position: absolute;
+    left: -0.3rem;
+    top: 0.16rem;
+}*/
+.introduce_text #list1 li::before{
+	position: absolute;
+    left: -0.32rem;
+    top:0;
+}
+.introduce_text #list1 li:nth-child(1)::before{
+	content: "1.";
+}
+.introduce_text #list1 li:nth-child(2)::before{
+	content: "2.";
+}
+.introduce_text #list1 li:nth-child(3)::before{
+	content: "3.";
+}
+.introduce_text #list1 li:nth-child(4)::before{
+	content: "4.";
+}
+.introduce_text #list1 li:nth-child(5)::before{
+	content: "5.";
+}
+.introduce_text #list1 li:nth-child(6)::before{
+	content: "6.";
+}
+.introduce_text #list1 li:nth-child(7)::before{
+	content: "7.";
+}
+.introduce_text #list1 li:nth-child(8)::before{
+	content: "8.";
+}
+.introduce_text #list1 li:nth-child(9)::before{
+	content: "9.";
+}
+#shade *{
+	display: block;
+}
+.card_tip{
+	background-color: #ececec;
+	font:normal 0.3rem/0.4rem "";
+	padding: 0.45rem 0.4rem;
+	margin-top: 0.52rem;
+	color: #5f646f;
+}
+#media{
+	position: relative;
+	z-index: 1;
+}
+[v-cloak]{
+    display: none; /*解决vue闪屏问题*/
+}
+.card p{
+	font:0.34rem/0.66rem "songti";
+	color:#d9b765;
+	margin-left: -0.1rem;
+}
+#marketPrice{
+	font:0.3rem/0.6rem "songti";
+	text-decoration: line-through;
+	padding-right: 0.12rem;
+}
+#salePrice{
+	font:0.34rem/0.6rem "songti";
+	color:#d9b765;
+	padding-left: 0.1rem;
+}
+#kl{
+	font:0.46rem/0.6rem "songti";
+}
