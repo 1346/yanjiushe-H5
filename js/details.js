@@ -110,10 +110,10 @@ var vm = new Vue({
 				var the_href = "apphtxq://htxq.app?" + this.jumpType + "?" + this.id;
 				console.log(the_href);
 				window.location.href = the_href;
-				setTimeout(function(){
-					window.location.href = "http://api.htxq.net/h5/download/download.html";
-				},5000);
-				console.log(the_href);
+				//setTimeout(function(){
+				//	window.location.href = "http://api.htxq.net/h5/download/download.html";
+				//},5000);
+				//console.log(the_href);
 
 				// window.location.href = "http://api.htxq.net/h5/download/download.html";
 			}

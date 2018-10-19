@@ -1,0 +1,27 @@
+body {
+    line-height:1;
+    margin:0;
+}
+
+/*商品列表样式*/
+.style-for-1 {
+    width:100%;
+    height:3.75rem;
+}
+.style-for-2 {
+    width:3.73rem;
+    height:2.49rem;
+}
+.style-for-3 {
+    width:2.48rem;
+    height:3.3rem;
+}
+.card-for-1 {
+    width:100%;
+}
+.card-for-2 {
+    width:3.73rem;
+}
+.card-for-3 {
+    width:2.48rem;
+}

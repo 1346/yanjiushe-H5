@@ -9,27 +9,27 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <link rel="stylesheet" href="./css/mui.min.css" />
+    <link rel="stylesheet" href="./css/public.css" />
     <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/vue.min.js"></script>
     <script type="text/javascript" src="./js/mui.min.js"></script>
+    <script type="text/javascript" src="./js/public.js"></script>
     <script type="text/javascript">
-        (function () {
-            document.addEventListener('DOMContentLoaded', function () {
-                var html = document.documentElement;
-                var windowWidth = html.clientWidth;
-                html.style.fontSize = windowWidth / 7.5 + 'px';
-            }, false);
-        })();
         mui.init();
     </script>
     <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/login_public_750.js"></script>
     <style type="text/css">
+        .mui-content {
+            background-color:#ffffff;
+        }
         .mui-slider-item {
             height:3.53rem !important;
+            font-size:0.32rem !important;
         }
         .mui-slider-item img {
             width:inherit;
         }
+        /*TODO:记得删除*/
         .banner0 {
             background-color: #333
         }
@@ -38,6 +38,95 @@
         }
         .banner2 {
             background-color: #999
+        }
+        .mui-slider-indicator {
+            bottom:0.26rem;
+            right:0.38rem;
+            width:auto;
+        }
+        .mui-slider-indicator .mui-indicator {
+            width:0.08rem;
+            height:0.08rem;
+            margin:0 0.08rem 0 0;
+            border-radius:0;
+            box-shadow:none;
+            background-color:#a6a6a6;
+        }
+        .mui-slider-indicator .mui-indicator:last-child {
+            margin:0;
+        }
+        .mui-slider-indicator .mui-active.mui-indicator {
+            background-color:#dbb867;
+        }
+        .mui-card {
+            margin:0 0.03rem 0 0;
+            box-shadow:none;
+            border-radius:0;
+            display:inline-block;
+        }
+        .mui-card:last-child {
+            margin:0;
+        }
+        .mui-card:nth-child(4) {
+            margin:0;
+        }
+        .mui-card-footer:before, .mui-card-header:after {
+            content:none;
+        }
+        /*TODO:记得删除*/
+        .free .mui-card-content {
+            background-color:#8a6de9;
+        }
+        .new .mui-card-content {
+            background-color:#cf2d28;
+        }
+        .start .mui-card-content {
+            background-color:#007aff;
+        }
+        .shop .mui-card-content {
+            background-color:#5f646f;
+        }
+        .flower .mui-card-content {
+            background-color:#2ac845;
+        }
+        .design .mui-card-content {
+            background-color:#000000;
+        }
+        .free-card {
+            margin-top:0.46rem;
+        }
+        .card-title {
+            margin-left:0.28rem;
+            margin-bottom:0.26rem;
+            font-size:0.32rem;
+            color:#323232;
+            font-weight:bold;
+        }
+        .mui-card-footer {
+            border-radius:0;
+            padding:0.2rem 0.12rem 0 0.26rem;
+            display:block;
+        }
+        .footer-name {
+            color:#323232;
+            font-weight:bold;
+            font-size:0.26rem;
+            height:0.26rem;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            margin-bottom:0.09rem;
+        }
+        .new-card,.start-card,.shop-card,.flower-card,.design-card {
+            margin-top:0.55rem;
+        }
+        .show-more {
+            display: inline-block;
+            float: right;
+            margin-right: 0.28rem;
+            font: normal 0.28rem 'lantingxihei';
+            line-height:0.32rem;
+            color:#777777;
         }
     </style>
 </head>
@@ -54,8 +143,110 @@
                 --><div class="mui-indicator" v-for="(item, index) in bannerList.length-1" :key="index"></div>
             </div>
         </div>
+
+        <div class="free-card" v-cloak>
+            <div class="card-title">限时免费</div>
+            <div class="mui-card free" v-for="(item,index) in freeList" :key="index" :class="{ 'card-for-1':freeList.length == 1,'card-for-2':freeList.length == 2,'card-for-3':freeList.length == 3 || freeList.length == 6  }">
+                <!--内容区-->
+                <div class="mui-card-content" :class="{ 'style-for-1':freeList.length == 1,'style-for-2':freeList.length == 2,'style-for-3':freeList.length == 3 || freeList.length == 6 }">
+                    <img :src="item.img" alt="" />
+                </div>
+                <!--页脚，放置补充信息或支持的操作-->
+                <div class="mui-card-footer">
+                    <div class="footer-name">{{ item.name }}</div>
+                    <div>{{ item.dec }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="new-card" v-cloak>
+            <div class="card-title">最新内容</div>
+            <div class="mui-card new" v-for="(item,index) in newList" :key="index" :class="{ 'card-for-1':newList.length == 1,'card-for-2':newList.length == 2,'card-for-3':newList.length == 3 || newList.length == 6  }">
+                <!--内容区-->
+                <div class="mui-card-content" :class="{ 'style-for-1':newList.length == 1,'style-for-2':newList.length == 2,'style-for-3':newList.length == 3 || newList.length == 6 }">
+                    <img :src="item.img" alt="" />
+                </div>
+                <!--页脚，放置补充信息或支持的操作-->
+                <div class="mui-card-footer">
+                    <div class="footer-name">{{ item.name }}</div>
+                    <div>{{ item.dec }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="start-card" v-cloak>
+            <div class="card-title">小白入门</div>
+            <div class="mui-card start" v-for="(item,index) in startList" :key="index" :class="{ 'card-for-1':startList.length == 1,'card-for-2':startList.length == 2,'card-for-3':startList.length == 3 || startList.length == 6  }">
+                <!--内容区-->
+                <div class="mui-card-content" :class="{ 'style-for-1':startList.length == 1,'style-for-2':startList.length == 2,'style-for-3':startList.length == 3 || startList.length == 6 }">
+                    <img :src="item.img" alt="" />
+                </div>
+                <!--页脚，放置补充信息或支持的操作-->
+                <div class="mui-card-footer">
+                    <div class="footer-name">{{ item.name }}</div>
+                    <div>{{ item.dec }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="shop-card" v-cloak>
+            <div class="card-title">开家鲜花店<span class="show-more" v-if="shopMore">查看更多</span></div>
+            <div class="mui-card shop" v-for="(item,index) in shopList" :key="index" :class="{ 'card-for-1':shopList.length == 1,'card-for-2':shopList.length == 2,'card-for-3':shopList.length == 3 || shopList.length == 6  }">
+                <!--内容区-->
+                <div class="mui-card-content" :class="{ 'style-for-1':shopList.length == 1,'style-for-2':shopList.length == 2,'style-for-3':shopList.length == 3 || shopList.length == 6 }">
+                    <img :src="item.img" alt="" />
+                </div>
+                <!--页脚，放置补充信息或支持的操作-->
+                <div class="mui-card-footer">
+                    <div class="footer-name">{{ item.name }}</div>
+                    <div>{{ item.dec }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="flower-card" v-cloak>
+            <div class="card-title">花材识别<span class="show-more" v-if="flowerMore">查看更多</span></div>
+            <div class="mui-card flower" v-for="(item,index) in flowerList" :key="index" :class="{ 'card-for-1':flowerList.length == 1,'card-for-2':flowerList.length == 2,'card-for-3':flowerList.length == 3 || flowerList.length == 6  }">
+                <!--内容区-->
+                <div class="mui-card-content" :class="{ 'style-for-1':flowerList.length == 1,'style-for-2':flowerList.length == 2,'style-for-3':flowerList.length == 3 || flowerList.length == 6 }">
+                    <img :src="item.img" alt="" />
+                </div>
+                <!--页脚，放置补充信息或支持的操作-->
+                <div class="mui-card-footer">
+                    <div class="footer-name">{{ item.name }}</div>
+                    <div>{{ item.dec }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="design-card" v-cloak>
+            <div class="card-title">花束设计<span class="show-more" v-if="designMore">查看更多</span></div>
+            <div class="mui-card design" v-for="(item,index) in designList" :key="index" :class="{ 'card-for-1':designList.length == 1,'card-for-2':designList.length == 2,'card-for-3':designList.length == 3 || designList.length == 6  }">
+                <!--内容区-->
+                <div class="mui-card-content" :class="{ 'style-for-1':designList.length == 1,'style-for-2':designList.length == 2,'style-for-3':designList.length == 3 || designList.length == 6 }">
+                    <img :src="item.img" alt="" />
+                </div>
+                <!--页脚，放置补充信息或支持的操作-->
+                <div class="mui-card-footer">
+                    <div class="footer-name">{{ item.name }}</div>
+                    <div>{{ item.dec }}</div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <script type="text/javascript" src="./js/index.js"></script>
+<script>
+    (function () {
+        mb('free');
+        mb('new');
+        mb('start');
+        mb('shop');
+    })();
+    function mb(dom) {
+        const mb = $(`.${dom}`);
+        if(mb.length == 6) {
+            mb[0].style.marginBottom = '0.29rem';
+            mb[1].style.marginBottom = '0.29rem';
+            mb[2].style.marginBottom = '0.29rem';
+        }
+    }
+
+</script>
 </body>
 </html>
