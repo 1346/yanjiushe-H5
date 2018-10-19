@@ -6,6 +6,7 @@
     <title>支付成功</title>
     <link rel="stylesheet" href="./css/public.css" />
     <script type="text/javascript" src="./js/public.js"></script>
+    <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/jquery-2.0.3.min.js"></script>
     <style type="text/css">
         .pay-success {
             margin:0.34rem 0.4rem 0;
@@ -49,16 +50,25 @@
 </head>
 <body>
     <section class="pay-success">
-        <div class="success-header">
-            <img src="./images/success-header.png" alt="" />
-        </div>
-        <div class="success-to">
-            进入官网观看视频<img src="./images/arrow.png" />
+        <div class="touch">
+            <div class="success-header">
+                <img src="./images/success-header.png" alt="" />
+            </div>
+            <div class="success-to">
+                进入官网观看视频<img src="./images/arrow.png" />
+            </div>
         </div>
         <div class="success-icon">
             <img src="./images/success.png" />
         </div>
         <div class="success-txt">支付成功</div>
     </section>
+
+<script>
+    $('.touch').on('touchstart',function() {
+        console.log(123);
+        window.location.href = './index.html'
+    })
+</script>
 </body>
 </html>

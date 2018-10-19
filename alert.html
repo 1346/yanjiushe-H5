@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>弹窗样式</title>
+    <link rel="stylesheet" href="./css/mui.min.css" />
+    <link rel="stylesheet" href="./css/public.css" />
+    <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/vue.min.js"></script>
+    <script type="text/javascript" src="./js/mui.min.js"></script>
+    <script type="text/javascript" src="./js/public.js"></script>
+    <script type="text/javascript">
+        mui.init();
+    </script>
+    <script type="text/javascript" src="https://htxq.oss-cn-beijing.aliyuncs.com/resources/js/login_public_750.js"></script>
+    <style type="text/css">
+        html,body {
+            height:100%;
+        }
+        .info {
+            width:5.2rem;
+            height:5.85rem;
+            background-color:#ffffff;
+            border-radius:0.05rem;
+            position: fixed;
+            top: 1.78rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .no-scroll {
+            overflow:hidden;
+            height:100%;
+        }
+        .info-header {
+            margin-top:0.48rem;
+            text-align:center;
+            font-size:0.32rem;
+            color:#323232;
+        }
+        .info-close {
+            position:absolute;
+            top:0;
+            width:0.48rem;
+            right:0.34rem;
+        }
+        .info-close img {
+            width:inherit;
+        }
+    </style>
+</head>
+<body>
+<div id="main" :class="{ 'no-scroll': showDialog }">
+<button @touchstart="showAlert">点我</button>
+    <transition name="fade">
+        <div class="info" v-if="showDialog">
+            <div class="info-close" @touchstart="closeAlert">
+                <img src="images/close.png" alt="" />
+            </div>
+            <div class="info-header">注册/登录</div>
+        </div>
+    </transition>
+<div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+<div>ceshi</div>
+</div>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#main',
+        data:{
+            showDialog:false
+        },
+        methods: {
+            showAlert:function() {
+                console.log(this.showDialog);
+                this.showDialog = true;
+            },
+            closeAlert:function(){
+                console.log(this.showDialog);
+                this.showDialog = false;
+            }
+        }
+    })
+</script>
+</body>
+</html>
