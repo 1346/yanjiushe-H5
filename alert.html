@@ -27,6 +27,7 @@
             top: 1.78rem;
             left: 50%;
             transform: translateX(-50%);
+            z-index:1000;
         }
         .no-scroll {
             overflow:hidden;
@@ -47,131 +48,302 @@
         .info-close img {
             width:inherit;
         }
+        .info-content {
+            padding: 0.59rem 0.34rem 0;
+        }
+        .input-code {
+            width:0.76rem !important;
+            border-right:1px solid #dcdcdc !important;
+            margin-right:0.24rem;
+        }
+        .input-value {
+            width:3.5rem !important;
+        }
+        .info-phone input,.info-img-code input,.info-msg-code input {
+            padding:0 !important;
+            margin-bottom:0 !important;
+            font-size:0.28rem;
+            line-height:0.35rem;
+            height:0.35rem !important;
+            border-radius:0;
+            border:none;
+            font-family:'lantingxihei';
+            color:#323232;
+        }
+        .input-line {
+            width:100%;
+            height:1px;
+            background-color:#dcdcdc;
+            margin-top:0.19rem;
+        }
+        .info-img-code {
+            margin-top:0.37rem;
+            position:relative;
+        }
+        .input-img-value {
+            width:3rem !important;
+        }
+        .info-img-src {
+            width:1.1rem;
+            height:0.46rem;
+            position:absolute;
+            right:0;
+            bottom:-0.03rem;
+            /*TODO:记得删掉*/
+            background-color:#333333;
+        }
+        .info-img-src img {
+            width:inherit;
+            height:inherit;
+        }
+        .info-msg-code {
+            margin-top:0.37rem;
+        }
+        .input-msg-value {
+            width:2.8rem !important;
+        }
+        .info-msg-btn {
+            display:inline-block;
+            padding-left:0.2rem;
+            border-left:1px solid #dcdcdc;
+            float:right;
+        }
+        .info-msg-btn .mui-btn {
+            border:none;
+            padding:0;
+            color:#caa858;
+            opacity:1 !important;
+        }
+        .mui-disabled {
+            color:#9c9c9c !important;
+        }
+        .info-submit {
+            margin-top:0.34rem;
+        }
+        .info-submit .mui-btn {
+            width:100%;
+            border:none;
+            line-height:1;
+            padding:0.25rem 0;
+            font-size:0.28rem;
+            border-radius:0.05rem;
+            background-color:#323232;
+            color:#ffffff;
+        }
+        .info-submit .mui-disabled {
+            background-color:#c4c4c4;
+        }
+        .info-protocol {
+            margin-top:0.4rem;
+            font-size:0.22rem;
+            color:#777777;
+            font-family:'lantingxihei';
+        }
+        .info-protocol span {
+            display:inline-block;
+        }
+        .protocol-link {
+            color:#323232;
+            text-decoration:underline;
+        }
+        input::-webkit-input-placeholder {
+             /* WebKit, Blink, Edge */
+            color: #9c9c9c;
+         }
+        input:-moz-placeholder {
+             /* Mozilla Firefox 4 to 18 */
+            color: #9c9c9c;
+         }
+        input::-moz-placeholder {
+             /* Mozilla Firefox 19+ */
+            color: #9c9c9c;
+         }
+        input:-ms-input-placeholder {
+             /* Internet Explorer 10-11 */
+            color: #9c9c9c;
+         }
     </style>
 </head>
 <body>
-<div id="main" :class="{ 'no-scroll': showDialog }">
-<button @touchstart="showAlert">点我</button>
-    <transition name="fade">
-        <div class="info" v-if="showDialog">
-            <div class="info-close" @touchstart="closeAlert">
-                <img src="images/close.png" alt="" />
-            </div>
-            <div class="info-header">注册/登录</div>
+<div id="main" class="mui-content" :class="{ 'no-scroll': showDialog }">
+<button @tap="showAlert">点我</button>
+    <div class="info" v-if="showDialog">
+        <div class="info-close" @tap="closeAlert">
+            <img src="images/close.png" alt="" />
         </div>
-    </transition>
-<div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-<div>ceshi</div>
-</div>
+        <div class="info-header">注册/登录</div>
+        <div class="info-content">
+            <form>
+                <div class="info-phone">
+                    <input type="text" class="input-code" v-model="code"><!--
+                    --><input type="text" class="mui-input-clear input-value" v-model="phone" maxlength="11" placeholder="请输入手机号" >
+                </div>
+                <div class="input-line"></div>
+                <div class="info-img-code">
+                    <input type="text" class="mui-input-clear input-img-value" v-model="imgCode" placeholder="请输入图形验证码" >
+                    <div class="info-img-src" @tap="getImgCode">
+                        <img src="images/000.png" alt="" />
+                    </div>
+                </div>
+                <div class="input-line"></div>
+                <div class="info-msg-code">
+                    <input type="text" class="mui-input-clear input-msg-value" v-model="msgCode" placeholder="请输人短信验证码" >
+                    <div class="info-msg-btn">
+                        <div class="mui-btn" :class="{ 'mui-disabled': btnDisabled }" @tap="getMsgCode">发送验证码</div>
+                    </div>
+                </div>
+                <div class="input-line"></div>
+                <div class="info-submit">
+                    <div class="mui-btn" @tap="login" :class="{'mui-disabled':submitDisabled}">确认</div>
+                </div>
+                <div class="info-protocol">
+                    <span>注册登录即表示我同意</span> <span class="protocol-link">花田小憩服务条款</span> <span>内容</span>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 <script>
     var vm = new Vue({
         el: '#main',
         data:{
-            showDialog:false
+            showDialog:false,   // 是否显示弹窗
+            code: '+86',    // 国家码
+            btnDisabled: true, // 发送短信按钮状态
+            submitDisabled: true,  // 提交按钮状态
+            phone: undefined,   // 手机号
+            msgCode: undefined, // 短信验证码
+            imgCode: undefined, // 图文验证码
         },
         methods: {
             showAlert:function() {
-                console.log(this.showDialog);
                 this.showDialog = true;
+                var mask = mui.createMask(function(){return false});
+                mask.show();
             },
             closeAlert:function(){
-                console.log(this.showDialog);
                 this.showDialog = false;
+                $('.mui-backdrop').remove();
+            },
+            getImgCode: function() {
+                console.log('获取图文验证码')
+            },
+            getMsgCode: function() {
+                if (vm.phone && vm.imgCode) {
+                    console.log('验证码发出去了');
+                    $.ajax({
+                        url: `http://test.api.htxq.net/cactus/verifycode/login`,
+                        type: "POST",
+                        dataType: 'json',
+                        data: {
+                            mobile: vm.phone,
+                            cc: 86,
+                            mcc: 460,
+                            platform: 1
+                        },
+                        success: function(data) {
+                            if (data.code == '000000') {
+                                const value = data.data
+                                console.log(value)
+                            }
+                        }
+                    })
+                }
+                else if (!vm.phone) {
+                    console.log('请输入手机号')
+                }
+                else if (!vm.imgCode) {
+                    console.log('请输入图形验证码')
+                }
+            },
+            login:function() {
+                var obj = {
+                    "vc":vm.msgCode,
+                    "cc": "86",
+                    "mcc": "460",
+                    "jpc": "",
+                    "market": "",
+                    "terminal": "WEB"
+                };
+                $.ajax({
+                    url: window.location.protocol + "//" + window.location.host + "/cactus/customer/login?mobile=" + vm.phone + "&platform=1",
+                    type: "POST",
+                    dataType: 'json',
+                    async: true,
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(obj),
+                    success: function(data) {
+                        if (data.code == '000000') {
+                            const value = data.data;
+                            userId 	= getCookie("user");
+                            try {
+                                localStorage.setItem('HTXQToken',value.token);
+                            } catch (e) {
+                                // alert("请关闭无痕浏览重新购买")
+                            }
+                            token = value.token;
+                            console.log("登录成功");
+                            console.log(localStorage.getItem('HTXQToken'));
+                        }else{
+                            console.log(data.text);
+                        };
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        console.log("服务器请求失败");
+                        deleC3loadding();
+                        console.log(xhr);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                    },
+                    complete: function () {
+                        deleC3loadding();
+                    },
+                })
             }
         }
     })
+</script>
+<script>
+    $(document)
+            .on('input propertychange','.input-value',function (e) {
+                if (e.type === "input" || e.orignalEvent.propertyName === "value") {
+                    if (this.value && vm.imgCode && vm.code) {
+                        vm.btnDisabled = false
+                    } else {
+                        vm.btnDisabled = true
+                    }
+                }
+            });
+    $(document)
+            .on('input propertychange','.input-img-value',function (e) {
+                if (e.type === "input" || e.orignalEvent.propertyName === "value") {
+                    if (this.value && vm.phone && vm.code) {
+                        vm.btnDisabled = false
+                    } else {
+                        vm.btnDisabled = true
+                    }
+                }
+            });
+    $(document)
+            .on('input propertychange','.input-code',function (e) {
+                if (e.type === "input" || e.orignalEvent.propertyName === "value") {
+                    if (this.value && vm.phone && vm.imgCode) {
+                        vm.btnDisabled = false
+                    } else {
+                        vm.btnDisabled = true
+                    }
+                }
+            });
+    $(document)
+            .on('input propertychange','.input-msg-value',function (e) {
+                if (e.type === "input" || e.orignalEvent.propertyName === "value") {
+                    if (this.value && !vm.btnDisabled) {
+                        vm.submitDisabled = false
+                    } else {
+                        vm.submitDisabled = true
+                    }
+                }
+            });
 </script>
 </body>
 </html>

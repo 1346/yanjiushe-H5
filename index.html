@@ -74,12 +74,6 @@
             content:none;
         }
         /*TODO:记得删除*/
-        .free .mui-card-content {
-            background-color:#8a6de9;
-        }
-        .new .mui-card-content {
-            background-color:#cf2d28;
-        }
         .start .mui-card-content {
             background-color:#007aff;
         }
@@ -117,6 +111,10 @@
             white-space: nowrap;
             margin-bottom:0.09rem;
         }
+        .footer-teacher {
+            color:#777777;
+            font-size:0.22rem;
+        }
         .new-card,.start-card,.shop-card,.flower-card,.design-card {
             margin-top:0.55rem;
         }
@@ -128,125 +126,112 @@
             line-height:0.32rem;
             color:#777777;
         }
+        img {
+            width:inherit;
+            height:inherit;
+        }
     </style>
 </head>
 <body>
-    <div id="main" class="mui-content" v-cloak>
-        <div class="mui-slider">
-            <div class="mui-slider-group">
-                <div class="mui-slider-item" v-for="(item,index) in bannerList" :key="index" :class="'banner'+index">
-                    <img :src="item" alt="" />
-                </div>
+<div id="main" class="mui-content" v-cloak>
+    <div class="mui-slider">
+        <div class="mui-slider-group">
+            <div class="mui-slider-item" v-for="(item,index) in bannerList" :key="index" :class="'banner'+index">
+                <img :src="item" alt="" />
             </div>
-            <div class="mui-slider-indicator">
-                <div class="mui-indicator mui-active"></div><!--
+        </div>
+        <div class="mui-slider-indicator">
+            <div class="mui-indicator mui-active"></div><!--
                 --><div class="mui-indicator" v-for="(item, index) in bannerList.length-1" :key="index"></div>
-            </div>
         </div>
+    </div>
 
-        <div class="free-card" v-cloak>
-            <div class="card-title">限时免费</div>
-            <div class="mui-card free" v-for="(item,index) in freeList" :key="index" :class="{ 'card-for-1':freeList.length == 1,'card-for-2':freeList.length == 2,'card-for-3':freeList.length == 3 || freeList.length == 6  }">
-                <!--内容区-->
-                <div class="mui-card-content" :class="{ 'style-for-1':freeList.length == 1,'style-for-2':freeList.length == 2,'style-for-3':freeList.length == 3 || freeList.length == 6 }">
-                    <img :src="item.img" alt="" />
-                </div>
-                <!--页脚，放置补充信息或支持的操作-->
-                <div class="mui-card-footer">
-                    <div class="footer-name">{{ item.name }}</div>
-                    <div>{{ item.dec }}</div>
-                </div>
+    <div class="free-card" v-cloak>
+        <div class="card-title">{{ freeList.title }}<span class="show-more" v-if="freeList.more">查看更多</span></div>
+        <div class="mui-card free" v-for="(item,index) in freeList.model" :key="index" :class="{ 'card-for-1':freeList.model.length == 1,'card-for-2':freeList.model.length == 2,'card-for-3':freeList.model.length == 3 || freeList.model.length == 6  }">
+            <!--内容区-->
+            <div class="mui-card-content" :class="{ 'style-for-1':freeList.model.length == 1,'style-for-2':freeList.model.length == 2,'style-for-3':freeList.model.length == 3 || freeList.model.length == 6 }">
+                <img :src="item.coverImage" alt="" />
             </div>
-        </div>
-        <div class="new-card" v-cloak>
-            <div class="card-title">最新内容</div>
-            <div class="mui-card new" v-for="(item,index) in newList" :key="index" :class="{ 'card-for-1':newList.length == 1,'card-for-2':newList.length == 2,'card-for-3':newList.length == 3 || newList.length == 6  }">
-                <!--内容区-->
-                <div class="mui-card-content" :class="{ 'style-for-1':newList.length == 1,'style-for-2':newList.length == 2,'style-for-3':newList.length == 3 || newList.length == 6 }">
-                    <img :src="item.img" alt="" />
-                </div>
-                <!--页脚，放置补充信息或支持的操作-->
-                <div class="mui-card-footer">
-                    <div class="footer-name">{{ item.name }}</div>
-                    <div>{{ item.dec }}</div>
-                </div>
-            </div>
-        </div>
-        <div class="start-card" v-cloak>
-            <div class="card-title">小白入门</div>
-            <div class="mui-card start" v-for="(item,index) in startList" :key="index" :class="{ 'card-for-1':startList.length == 1,'card-for-2':startList.length == 2,'card-for-3':startList.length == 3 || startList.length == 6  }">
-                <!--内容区-->
-                <div class="mui-card-content" :class="{ 'style-for-1':startList.length == 1,'style-for-2':startList.length == 2,'style-for-3':startList.length == 3 || startList.length == 6 }">
-                    <img :src="item.img" alt="" />
-                </div>
-                <!--页脚，放置补充信息或支持的操作-->
-                <div class="mui-card-footer">
-                    <div class="footer-name">{{ item.name }}</div>
-                    <div>{{ item.dec }}</div>
-                </div>
-            </div>
-        </div>
-        <div class="shop-card" v-cloak>
-            <div class="card-title">开家鲜花店<span class="show-more" v-if="shopMore">查看更多</span></div>
-            <div class="mui-card shop" v-for="(item,index) in shopList" :key="index" :class="{ 'card-for-1':shopList.length == 1,'card-for-2':shopList.length == 2,'card-for-3':shopList.length == 3 || shopList.length == 6  }">
-                <!--内容区-->
-                <div class="mui-card-content" :class="{ 'style-for-1':shopList.length == 1,'style-for-2':shopList.length == 2,'style-for-3':shopList.length == 3 || shopList.length == 6 }">
-                    <img :src="item.img" alt="" />
-                </div>
-                <!--页脚，放置补充信息或支持的操作-->
-                <div class="mui-card-footer">
-                    <div class="footer-name">{{ item.name }}</div>
-                    <div>{{ item.dec }}</div>
-                </div>
-            </div>
-        </div>
-        <div class="flower-card" v-cloak>
-            <div class="card-title">花材识别<span class="show-more" v-if="flowerMore">查看更多</span></div>
-            <div class="mui-card flower" v-for="(item,index) in flowerList" :key="index" :class="{ 'card-for-1':flowerList.length == 1,'card-for-2':flowerList.length == 2,'card-for-3':flowerList.length == 3 || flowerList.length == 6  }">
-                <!--内容区-->
-                <div class="mui-card-content" :class="{ 'style-for-1':flowerList.length == 1,'style-for-2':flowerList.length == 2,'style-for-3':flowerList.length == 3 || flowerList.length == 6 }">
-                    <img :src="item.img" alt="" />
-                </div>
-                <!--页脚，放置补充信息或支持的操作-->
-                <div class="mui-card-footer">
-                    <div class="footer-name">{{ item.name }}</div>
-                    <div>{{ item.dec }}</div>
-                </div>
-            </div>
-        </div>
-        <div class="design-card" v-cloak>
-            <div class="card-title">花束设计<span class="show-more" v-if="designMore">查看更多</span></div>
-            <div class="mui-card design" v-for="(item,index) in designList" :key="index" :class="{ 'card-for-1':designList.length == 1,'card-for-2':designList.length == 2,'card-for-3':designList.length == 3 || designList.length == 6  }">
-                <!--内容区-->
-                <div class="mui-card-content" :class="{ 'style-for-1':designList.length == 1,'style-for-2':designList.length == 2,'style-for-3':designList.length == 3 || designList.length == 6 }">
-                    <img :src="item.img" alt="" />
-                </div>
-                <!--页脚，放置补充信息或支持的操作-->
-                <div class="mui-card-footer">
-                    <div class="footer-name">{{ item.name }}</div>
-                    <div>{{ item.dec }}</div>
-                </div>
+            <!--页脚，放置补充信息或支持的操作-->
+            <div class="mui-card-footer">
+                <div class="footer-name">{{ item.caption }}</div>
+                <div class="footer-teacher">{{ item.teacher }}</div>
             </div>
         </div>
     </div>
-    
-    <script type="text/javascript" src="./js/index.js"></script>
-<script>
-    (function () {
-        mb('free');
-        mb('new');
-        mb('start');
-        mb('shop');
-    })();
-    function mb(dom) {
-        const mb = $(`.${dom}`);
-        if(mb.length == 6) {
-            mb[0].style.marginBottom = '0.29rem';
-            mb[1].style.marginBottom = '0.29rem';
-            mb[2].style.marginBottom = '0.29rem';
-        }
-    }
+    <div class="new-card" v-cloak>
+        <div class="card-title">{{ newList.title }}<span class="show-more" v-if="newList.more">查看更多</span></div>
+        <div class="mui-card new" v-for="(item,index) in newList.model" :key="index" :class="{ 'card-for-1':newList.model.length == 1,'card-for-2':newList.model.length == 2,'card-for-3':newList.model.length == 3 || newList.model.length == 6  }">
+            <!--内容区-->
+            <div class="mui-card-content" :class="{ 'style-for-1':newList.model.length == 1,'style-for-2':newList.model.length == 2,'style-for-3':newList.model.length == 3 || newList.model.length == 6 }">
+                <img :src="item.coverImage" alt="" />
+            </div>
+            <!--页脚，放置补充信息或支持的操作-->
+            <div class="mui-card-footer">
+                <div class="footer-name">{{ item.caption }}</div>
+                <div class="footer-teacher">{{ item.teacher }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="start-card" v-cloak>
+        <div class="card-title">小白入门</div>
+        <div class="mui-card start" v-for="(item,index) in startList" :key="index" :class="{ 'card-for-1':startList.length == 1,'card-for-2':startList.length == 2,'card-for-3':startList.length == 3 || startList.length == 6  }">
+            <!--内容区-->
+            <div class="mui-card-content" :class="{ 'style-for-1':startList.length == 1,'style-for-2':startList.length == 2,'style-for-3':startList.length == 3 || startList.length == 6 }">
+                <img :src="item.img" alt="" />
+            </div>
+            <!--页脚，放置补充信息或支持的操作-->
+            <div class="mui-card-footer">
+                <div class="footer-name">{{ item.name }}</div>
+                <div class="footer-teacher">{{ item.dec }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="shop-card" v-cloak>
+        <div class="card-title">开家鲜花店<span class="show-more" v-if="shopMore">查看更多</span></div>
+        <div class="mui-card shop" v-for="(item,index) in shopList" :key="index" :class="{ 'card-for-1':shopList.length == 1,'card-for-2':shopList.length == 2,'card-for-3':shopList.length == 3 || shopList.length == 6  }">
+            <!--内容区-->
+            <div class="mui-card-content" :class="{ 'style-for-1':shopList.length == 1,'style-for-2':shopList.length == 2,'style-for-3':shopList.length == 3 || shopList.length == 6 }">
+                <img :src="item.img" alt="" />
+            </div>
+            <!--页脚，放置补充信息或支持的操作-->
+            <div class="mui-card-footer">
+                <div class="footer-name">{{ item.name }}</div>
+                <div class="footer-teacher">{{ item.dec }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="flower-card" v-cloak>
+        <div class="card-title">花材识别<span class="show-more" v-if="flowerMore">查看更多</span></div>
+        <div class="mui-card flower" v-for="(item,index) in flowerList" :key="index" :class="{ 'card-for-1':flowerList.length == 1,'card-for-2':flowerList.length == 2,'card-for-3':flowerList.length == 3 || flowerList.length == 6  }">
+            <!--内容区-->
+            <div class="mui-card-content" :class="{ 'style-for-1':flowerList.length == 1,'style-for-2':flowerList.length == 2,'style-for-3':flowerList.length == 3 || flowerList.length == 6 }">
+                <img :src="item.img" alt="" />
+            </div>
+            <!--页脚，放置补充信息或支持的操作-->
+            <div class="mui-card-footer">
+                <div class="footer-name">{{ item.name }}</div>
+                <div class="footer-teacher">{{ item.dec }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="design-card" v-cloak>
+        <div class="card-title">花束设计<span class="show-more" v-if="designMore">查看更多</span></div>
+        <div class="mui-card design" v-for="(item,index) in designList" :key="index" :class="{ 'card-for-1':designList.length == 1,'card-for-2':designList.length == 2,'card-for-3':designList.length == 3 || designList.length == 6  }">
+            <!--内容区-->
+            <div class="mui-card-content" :class="{ 'style-for-1':designList.length == 1,'style-for-2':designList.length == 2,'style-for-3':designList.length == 3 || designList.length == 6 }">
+                <img :src="item.img" alt="" />
+            </div>
+            <!--页脚，放置补充信息或支持的操作-->
+            <div class="mui-card-footer">
+                <div class="footer-name">{{ item.name }}</div>
+                <div class="footer-teacher">{{ item.dec }}</div>
+            </div>
+        </div>
+    </div>
+</div>
 
-</script>
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
